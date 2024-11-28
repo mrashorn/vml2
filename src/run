@@ -5,5 +5,5 @@
 g++ -o bin/run.exe *.cpp -lsfml-graphics -lsfml-window -lsfml-system
 
 # to run:
-#./bin/run
+./bin/run.exe
 
