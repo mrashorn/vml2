@@ -1,0 +1,9 @@
+#! /bin/bash
+# build script for compiling
+
+# to build:
+g++ -o bin/run.exe *.cpp
+
+# to run:
+#./bin/run
+
