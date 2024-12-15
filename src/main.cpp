@@ -25,17 +25,45 @@ int main()
 	sf::View mainView(sf::FloatRect(0, 0, window_resolution.x, window_resolution.y)); 
 	window.setView(mainView);
 
+
 	while (window.isOpen())
 	{
 
-		if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+		// Process events
+		sf::Event event;
+		while(window.pollEvent(event))
 		{
-			window.close();
+			// Request for closing the window
+			if (event.type == sf::Event::Closed)
+				window.close();
+
+			// The escape key was pressed
+			if ((event.type == sf::Event::KeyPressed) && (event.key.code == sf::Keyboard::Escape))
+				window.close();
+
 		}
 
+		// check to see if the mouse hovers over the welcomeText
+		if (welcomeText.getLocalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
+		{
+			std::cout << "The mouse is intersecting the welcomeText!" << std::endl;
+		}
+		else
+			std::cout << "Not intersecting." << std::endl;
+
+		
+		// get the mouse coordinates
+		// std::cout << std::to_string(sf::Mouse::getPosition(window).x) + ", " + std::to_string(sf::Mouse::getPosition(window).y) << std::endl;
+
+
+		// clear screen
+		// window.clear()
+
+		// draw 
 		window.draw(welcomeText);
 
 
+		// update the window
 		window.display();
 	}
 
