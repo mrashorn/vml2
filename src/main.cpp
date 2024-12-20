@@ -1,6 +1,10 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 
+
+#include "../include/button.h"
+
+
 int main()
 {
 	// create the window
@@ -44,17 +48,17 @@ int main()
 		}
 
 		// check to see if the mouse hovers over the welcomeText
-		if (welcomeText.getLocalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
+		if (welcomeText.getGlobalBounds().contains(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))
 		{
-			std::cout << "The mouse is intersecting the welcomeText!" << std::endl;
+			welcomeText.setFillColor(sf::Color::Cyan);
 		}
 		else
-			std::cout << "Not intersecting." << std::endl;
+		{
+			welcomeText.setFillColor(sf::Color::White);
+		}
+
 
 		
-		// get the mouse coordinates
-		// std::cout << std::to_string(sf::Mouse::getPosition(window).x) + ", " + std::to_string(sf::Mouse::getPosition(window).y) << std::endl;
-
 
 		// clear screen
 		// window.clear()
