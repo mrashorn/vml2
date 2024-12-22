@@ -12,10 +12,12 @@ class Button
 		Button(std::string text); // constructor
 
 		std::string getText();
-		// setTextCharacterSize
-		// setTextColor
-		// setTextScale
-		// setTextFont
-		// setText
+		void setTextCharacterSize(int size);
+		void setTextColor(sf::Color color);
+		void setTextScale(float x_scale, float y_scale);
+		void setTextFont(sf::Font font);
+		void setText(std::string new_text);
+		void setPosition(float x_coord, float y_coord);
+
 
 };
