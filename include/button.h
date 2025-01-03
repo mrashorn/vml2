@@ -7,6 +7,11 @@ class Button
 	private:
 		sf::Text mText;
 
+		struct mPosition{
+			float xPos;
+			float yPos;
+		};
+
 
 	public:
 		Button(std::string text); // constructor

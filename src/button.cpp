@@ -4,6 +4,12 @@
 Button::Button(std::string text) // constructor
 {
 	mText.setString(text);
+	this->setTextCharacterSize(44);
+	this->setTextColor(sf::Color::White);
+	this->setTextScale(0.5, 0.5);
+	sf::Font font;
+	font.loadFromFile("fonts/Iceland-Regular.ttf");
+	this->setTextFont(font);
 
 	// let's add defaults here so we don't have to init every button
 	// with 10 lines
