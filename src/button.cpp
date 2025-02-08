@@ -48,7 +48,21 @@ void Button::setText(std::string new_text)
 void Button::setPosition(float x_coord, float y_coord)
 {
 	// is this one straight forward?
-	// where are we setting the button and text as well?
+	xPos = x_coord;
+	yPos = y_coord;
+	mText.setPosition(xPos, yPos);
+}
+
+void Button::setSize()
+{
+	// somehow need to get the mText.size and then make the button that big as well
+	// This will be used to check for mouse collision with the button
+	// itself and not the text only
+}
+
+sf::Text Button::drawable()
+{
+	return mText;
 }
 
 

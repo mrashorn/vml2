@@ -29,6 +29,8 @@ int main()
 	sf::View mainView(sf::FloatRect(0, 0, window_resolution.x, window_resolution.y)); 
 	window.setView(mainView);
 
+	Button myButton = Button("Test Vehicle");
+
 
 	while (window.isOpen())
 	{
@@ -65,6 +67,7 @@ int main()
 
 		// draw 
 		window.draw(welcomeText);
+		window.draw(myButton.drawable());
 
 
 		// update the window

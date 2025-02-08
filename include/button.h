@@ -6,12 +6,8 @@ class Button
 {
 	private:
 		sf::Text mText;
-
-		struct mPosition{
-			float xPos;
-			float yPos;
-		};
-
+		float xPos;
+		float yPos;
 
 	public:
 		Button(std::string text); // constructor
@@ -23,6 +19,8 @@ class Button
 		void setTextFont(sf::Font font);
 		void setText(std::string new_text);
 		void setPosition(float x_coord, float y_coord);
+		void setSize(); // todo
+		sf::Text drawable();
 
 
 };
